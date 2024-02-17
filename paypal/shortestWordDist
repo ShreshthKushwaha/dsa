@@ -1,0 +1,26 @@
+from typing import (
+    List,
+)
+
+class Solution:
+    """
+    @param words: a list of words
+    @param word1: a string
+    @param word2: a string
+    @return: the shortest distance between word1 and word2 in the list
+    """
+    def shortest_distance(self, words: List[str], word1: str, word2: str) -> int:
+
+        a = []
+        b = []
+        for i in range(len(words)):
+            if words[i]==word1:
+                a.append(i)
+            elif words[i]==word2:
+                b.append(i)    
+        # Write your code here
+        ans = 2**31
+        for e in a:
+            for f in b:
+                ans = min(abs(e-f),ans)
+        return ans        
