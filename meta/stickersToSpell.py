@@ -13,7 +13,7 @@ class Solution:
                     hm[e]=1
             stickers_count.append(hm)
 
-
+##better to use remaining word as an identifier and memo key
         def find(targetWord):
             if targetWord in mem:
                 return mem[targetWord]
@@ -29,6 +29,7 @@ class Solution:
                 else:
                     target_hm[e]=1
             for s in stickers_count:
+                #we are better off skipping a word if the initial character is not satisfied by any word because anyways we need it
                 if targetWord[0] not in s:
                     continue
                     
